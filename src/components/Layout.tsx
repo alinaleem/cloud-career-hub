@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black dark:bg-black bg-white text-white dark:text-white text-black relative overflow-hidden">
       <ParticleBackground />
       <Navigation />
       <main className="relative z-10">

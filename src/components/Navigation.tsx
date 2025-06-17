@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Linkedin, Github } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Social Links */}
+          {/* Social Links and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="https://linkedin.com"
@@ -58,19 +59,23 @@ const Navigation = () => {
             >
               <Github size={20} />
             </a>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
-          >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <span className={`block h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-              <span className={`block h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`} />
-              <span className={`block h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
-            </div>
-          </button>
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white"
+            >
+              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <span className={`block h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+                <span className={`block h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`} />
+                <span className={`block h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
