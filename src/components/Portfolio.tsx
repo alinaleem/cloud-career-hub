@@ -10,6 +10,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Twitter, GraduationCap, Calendar
 import SkillsChart from './SkillsChart';
 import CertificationsList from './CertificationsList';
 import TimelineExperience from './TimelineExperience';
+import PlatformStatistics from './PlatformStatistics';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -204,6 +205,7 @@ const Portfolio = () => {
 
           <SkillsChart />
           <CertificationsList />
+          <PlatformStatistics />
         </div>
       </section>
 
