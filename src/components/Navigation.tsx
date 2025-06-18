@@ -23,7 +23,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
-            Your Name Here
+            Dulara Abhiranda
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,11 +32,14 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-white ${
+                className={`text-sm font-medium transition-colors hover:text-white relative ${
                   isActive(item.path) ? 'text-white' : 'text-gray-400'
                 }`}
               >
                 {item.name}
+                {isActive(item.path) && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"></div>
+                )}
               </Link>
             ))}
           </div>
