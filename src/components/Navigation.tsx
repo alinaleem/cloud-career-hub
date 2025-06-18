@@ -23,7 +23,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
-            DevOps Engineer
+            Your Name Here
           </Link>
 
           {/* Desktop Navigation */}
