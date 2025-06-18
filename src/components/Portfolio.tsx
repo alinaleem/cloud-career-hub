@@ -202,9 +202,26 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Technical Skills Section */}
+      <section id="technical-skills" className="min-h-screen pt-24 px-6">
+        <div className="max-w-6xl mx-auto">
           <SkillsChart />
+        </div>
+      </section>
+
+      {/* AWS Certifications Section */}
+      <section id="aws-certifications" className="min-h-screen pt-24 px-6">
+        <div className="max-w-6xl mx-auto">
           <CertificationsList />
+        </div>
+      </section>
+
+      {/* Platform Statistics Section */}
+      <section id="platform-statistics" className="min-h-screen pt-24 px-6">
+        <div className="max-w-6xl mx-auto">
           <PlatformStatistics />
         </div>
       </section>

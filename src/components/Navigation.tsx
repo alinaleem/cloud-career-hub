@@ -10,6 +10,9 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
+    { name: 'Technical Skills', id: 'technical-skills' },
+    { name: 'AWS Certifications', id: 'aws-certifications' },
+    { name: 'Platform Statistics', id: 'platform-statistics' },
     { name: 'Education', id: 'education' },
     { name: 'Experience', id: 'experience' },
     { name: 'Projects', id: 'projects' },
