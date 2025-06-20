@@ -1,102 +1,115 @@
 
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, ExternalLink } from 'lucide-react';
+import { ExternalLink, Github, Shield, Code, Trophy } from 'lucide-react';
 
 const PlatformStatistics = () => {
   const platforms = [
     {
       name: 'GitHub',
-      icon: <Github className="w-8 h-8" />,
-      color: 'border-purple-500',
-      stats: [
-        { label: 'REPOSITORIES', value: '15' },
-        { label: 'COMMITS', value: '28' },
-        { label: 'CONTRIBUTIONS', value: '342', sublabel: '705' },
-        { label: 'FOLLOWERS', value: '24' }
-      ],
-      profileUrl: 'https://github.com/yourusername'
+      username: 'ABHiranda',
+      stats: {
+        repositories: '45+',
+        followers: '120+',
+        contributions: '500+',
+        stars: '80+'
+      },
+      profileUrl: 'https://github.com/ABHiranda',
+      icon: Github,
+      color: 'text-gray-300',
+      hoverColor: 'group-hover:text-gray-100',
+      borderColor: 'hover:border-gray-400',
+      bgGradient: 'from-gray-900/80 to-gray-800/50'
     },
     {
       name: 'TryHackMe',
-      icon: (
-        <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center text-white text-xs font-bold">
-          THM
-        </div>
-      ),
-      color: 'border-red-500',
-      stats: [
-        { label: 'RANK', value: '12,458' },
-        { label: 'ROOMS', value: '37' },
-        { label: 'BADGES', value: '8' },
-        { label: 'STREAK', value: '15' }
-      ],
-      profileUrl: 'https://tryhackme.com/p/yourusername'
+      username: 'CyberSona',
+      stats: {
+        rank: 'Top 5%',
+        points: '15,000+',
+        badges: '25+',
+        streak: '45 days'
+      },
+      profileUrl: 'https://tryhackme.com/p/CyberSona',
+      icon: Shield,
+      color: 'text-green-400',
+      hoverColor: 'group-hover:text-green-300',
+      borderColor: 'hover:border-green-400',
+      bgGradient: 'from-green-900/20 to-gray-800/50'
     },
     {
       name: 'HackTheBox',
-      icon: (
-        <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white text-xs font-bold">
-          HTB
-        </div>
-      ),
-      color: 'border-green-500',
-      stats: [
-        { label: 'LEVEL', value: 'Hacker' },
-        { label: 'SYSTEMS', value: '18' },
-        { label: 'CHALLENGES', value: '12' },
-        { label: 'POINTS', value: '250' }
-      ],
-      profileUrl: 'https://app.hackthebox.com/profile/yourid'
+      username: 'ABHiranda',
+      stats: {
+        rank: 'Hacker',
+        points: '8,500+',
+        machines: '35+',
+        challenges: '20+'
+      },
+      profileUrl: 'https://app.hackthebox.com/profile/ABHiranda',
+      icon: Code,
+      color: 'text-green-500',
+      hoverColor: 'group-hover:text-green-400',
+      borderColor: 'hover:border-green-500',
+      bgGradient: 'from-green-900/20 to-gray-800/50'
     },
     {
       name: 'HackerRank',
-      icon: (
-        <div className="w-8 h-8 bg-green-600 rounded flex items-center justify-center text-white text-xs font-bold">
-          HR
-        </div>
-      ),
-      color: 'border-green-600',
-      stats: [
-        { label: 'RANK', value: '5 ★' },
-        { label: 'PROBLEMS', value: '125' },
-        { label: 'CERTIFICATES', value: '3' },
-        { label: 'SKILLS', value: 'Python ★★★★★' }
-      ],
-      profileUrl: 'https://hackerrank.com/yourusername'
+      username: 'abhiranda21',
+      stats: {
+        stars: '4 Star',
+        problems: '150+',
+        rank: 'Gold',
+        score: '2,400+'
+      },
+      profileUrl: 'https://www.hackerrank.com/abhiranda21',
+      icon: Trophy,
+      color: 'text-yellow-400',
+      hoverColor: 'group-hover:text-yellow-300',
+      borderColor: 'hover:border-yellow-400',
+      bgGradient: 'from-yellow-900/20 to-gray-800/50'
     }
   ];
 
   return (
-    <div className="mb-16">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Platform Statistics</h2>
-        <p className="text-gray-400 text-lg">My performance and activity across various tech platforms</p>
+    <div className="space-y-20">
+      <div className="text-center mb-16">
+        <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8">Platform Statistics</h2>
+        <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto">
+          My coding journey and achievements across various development and cybersecurity platforms
+        </p>
       </div>
-      
-      <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {platforms.map((platform, index) => (
-          <Card key={index} className={`bg-gray-900/50 border-2 ${platform.color} hover:border-opacity-80 transition-all duration-300`}>
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  {platform.icon}
-                  <h3 className="text-xl font-bold text-white">{platform.name}</h3>
+          <Card
+            key={index}
+            className={`bg-gradient-to-br ${platform.bgGradient} border-gray-700 ${platform.borderColor} transition-all duration-300 group hover:scale-105 cursor-pointer`}
+            onClick={() => window.open(platform.profileUrl, '_blank')}
+          >
+            <CardContent className="p-8 text-center">
+              <div className="relative mb-6">
+                <div className={`w-20 h-20 bg-gray-800/50 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                  <platform.icon className={`w-10 h-10 ${platform.color} ${platform.hoverColor} transition-colors`} />
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {platform.stats.map((stat, statIndex) => (
-                  <div key={statIndex} className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {stat.value}
-                      {stat.sublabel && (
-                        <div className="text-sm text-gray-400 font-normal">{stat.sublabel}</div>
-                      )}
-                    </div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">
-                      {stat.label}
-                    </div>
+              <h3 className={`font-bold text-2xl mb-2 text-white ${platform.hoverColor} transition-colors`}>
+                {platform.name}
+              </h3>
+              
+              <p className="text-gray-400 text-sm mb-6 group-hover:text-gray-300 transition-colors">
+                @{platform.username}
+              </p>
+              
+              <div className="space-y-3 mb-6">
+                {Object.entries(platform.stats).map(([key, value], statIndex) => (
+                  <div key={statIndex} className="flex justify-between items-center">
+                    <span className="text-gray-400 capitalize text-sm">{key}:</span>
+                    <Badge className={`${platform.color.replace('text-', 'bg-').replace('400', '400/20')} ${platform.color} border-current/30 group-hover:scale-105 transition-transform`}>
+                      {value}
+                    </Badge>
                   </div>
                 ))}
               </div>
@@ -104,13 +117,14 @@ const PlatformStatistics = () => {
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full border-gray-600 text-gray-300 hover:bg-gray-700"
-                asChild
+                className={`w-full border-gray-600 text-gray-300 hover:bg-gray-700 group-hover:border-current group-hover:${platform.color} transition-all`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(platform.profileUrl, '_blank');
+                }}
               >
-                <a href={platform.profileUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  View Profile
-                </a>
+                <ExternalLink className="w-4 h-4 mr-2" />
+                View Profile
               </Button>
             </CardContent>
           </Card>
