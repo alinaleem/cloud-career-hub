@@ -38,9 +38,9 @@ const Contact = () => {
       handle: 'abhiranda21@gmail.com',
       url: 'mailto:abhiranda21@gmail.com',
       icon: Mail,
-      color: 'text-red-400',
-      bgColor: 'bg-red-400/20',
-      borderColor: 'border-red-400/30'
+      color: 'text-blue-400',
+      bgColor: 'bg-blue-400/20',
+      borderColor: 'border-blue-400/30'
     },
     {
       name: 'X (Twitter)',
@@ -110,6 +110,7 @@ const Contact = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-300">Send Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
                   <Input
                     name="name"
                     placeholder="Enter your name here (e.g. Dulara Abhiranda)"
@@ -121,6 +122,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
                   <Input
                     name="email"
                     type="email"
@@ -133,6 +135,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
                   <Input
                     name="subject"
                     placeholder="Enter your subject here (e.g. Just saying Hi!)"
@@ -144,6 +147,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
                   <Textarea
                     name="message"
                     placeholder="Enter your message here (e.g. Hello Abhiranda! I'd like to say Hi!)"
@@ -167,16 +171,16 @@ const Contact = () => {
             {/* Social Media Contact Cards */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-300">Social Media</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {socialMediaContacts.map((contact, index) => (
                   <Card
                     key={index}
-                    className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border-gray-700 hover:border-gray-500 transition-all duration-300 group hover:scale-105 cursor-pointer"
+                    className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-gray-700 hover:border-gray-500 transition-all duration-300 group hover:scale-105 hover:shadow-2xl cursor-pointer"
                     onClick={() => window.open(contact.url, '_blank')}
                   >
                     <CardContent className="p-6 text-center">
                       <div className={`w-16 h-16 ${contact.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <contact.icon className={`w-8 h-8 ${contact.color}`} />
+                        <contact.icon className={`w-8 h-8 ${contact.color} group-hover:shadow-lg transition-all duration-300`} />
                       </div>
                       
                       <h3 className={`font-bold text-lg mb-2 text-white group-hover:${contact.color} transition-colors`}>
@@ -195,7 +199,7 @@ const Contact = () => {
 
           {/* Additional Contact Information */}
           <div className="text-center">
-            <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-gray-700 rounded-lg p-8 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-gray-700 rounded-lg p-8 max-w-2xl mx-auto hover:border-gray-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               <h3 className="text-2xl font-bold mb-6 text-white">Additional Contact Info</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-3">
@@ -207,6 +211,14 @@ const Contact = () => {
                   <span className="text-gray-300">Colombo, Sri Lanka</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="text-center mt-20 pb-10">
+            <div className="space-y-2">
+              <p className="text-gray-400">Copyright © 2024 Dulara Abhiranda</p>
+              <p className="text-gray-500 text-sm">Version 2.0 | Built with HTML | CSS | JS</p>
             </div>
           </div>
         </div>
