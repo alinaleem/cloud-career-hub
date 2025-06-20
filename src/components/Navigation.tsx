@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Linkedin, Github } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
@@ -18,6 +18,31 @@ const Navigation = () => {
     { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' },
   ];
+
+  // Add scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => ({
+        id: item.id,
+        element: document.getElementById(item.id)
+      })).filter(section => section.element);
+
+      const scrollPosition = window.scrollY + 200; // Offset for header height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.element && section.element.offsetTop <= scrollPosition) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
