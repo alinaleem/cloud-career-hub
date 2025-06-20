@@ -61,23 +61,23 @@ const TimelineExperience = () => {
             }`}
           >
             {/* Timeline dot */}
-            <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-2 md:-translate-x-2 z-10"></div>
+            <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-black transform -translate-x-2 md:-translate-x-2 z-10 transition-all duration-300 hover:bg-blue-400 hover:scale-125"></div>
 
             {/* Content */}
             <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} ml-12 md:ml-0`}>
-              <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-6 hover:border-gray-500 transition-colors">
+              <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-6 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/20 transition-all duration-300 transform hover:scale-105 cursor-pointer group">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                  <span className="text-sm text-gray-400 mt-1 md:mt-0">{exp.period}</span>
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">{exp.title}</h3>
+                  <span className="text-sm text-gray-400 mt-1 md:mt-0 group-hover:text-gray-300 transition-colors duration-300">{exp.period}</span>
                 </div>
-                <h4 className="text-lg font-semibold text-blue-400 mb-3">{exp.company}</h4>
-                <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
+                <h4 className="text-lg font-semibold text-blue-400 mb-3 group-hover:text-blue-300 transition-colors duration-300">{exp.company}</h4>
+                <p className="text-gray-300 mb-4 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{exp.description}</p>
                 <div className="space-y-2">
-                  <h5 className="font-semibold text-gray-200">Key Achievements:</h5>
+                  <h5 className="font-semibold text-gray-200 group-hover:text-white transition-colors duration-300">Key Achievements:</h5>
                   <ul className="space-y-1">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="text-gray-300 text-sm flex items-start">
-                        <span className="text-blue-400 mr-2 mt-1">•</span>
+                      <li key={i} className="text-gray-300 text-sm flex items-start group-hover:text-gray-200 transition-colors duration-300">
+                        <span className="text-blue-400 mr-2 mt-1 group-hover:text-blue-300 transition-colors duration-300">•</span>
                         {achievement}
                       </li>
                     ))}

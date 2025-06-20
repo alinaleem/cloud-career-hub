@@ -57,34 +57,34 @@ const Education = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {educationData.map((edu, index) => (
-              <Card key={index} className="bg-gray-900/50 border-gray-700 hover:border-gray-500 transition-all duration-300 group">
+              <Card key={index} className="bg-gray-900/50 border-gray-700 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/20 transition-all duration-300 group transform hover:scale-105 cursor-pointer">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="w-8 h-8 text-blue-400" />
+                    <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors duration-300">
+                      <GraduationCap className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
                         {edu.title}
                       </h3>
                       
-                      <h4 className="text-lg font-semibold text-gray-300 mb-3">
+                      <h4 className="text-lg font-semibold text-gray-300 mb-3 group-hover:text-gray-200 transition-colors duration-300">
                         {edu.institution}
                       </h4>
                       
                       <div className="space-y-2 mb-4">
-                        <div className="flex items-center text-gray-400 text-sm">
+                        <div className="flex items-center text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
                           <Calendar className="w-4 h-4 mr-2" />
                           {edu.period}
                         </div>
-                        <div className="flex items-center text-gray-400 text-sm">
+                        <div className="flex items-center text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
                           <MapPin className="w-4 h-4 mr-2" />
                           {edu.location}
                         </div>
                       </div>
                       
-                      <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${edu.statusColor} bg-gray-800`}>
+                      <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${edu.statusColor} bg-gray-800 group-hover:bg-gray-700 transition-colors duration-300`}>
                         {edu.status}
                       </div>
                     </div>
